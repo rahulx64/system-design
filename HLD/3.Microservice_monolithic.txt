@@ -1,0 +1,73 @@
+✅MOnolotothic architecture ->
+A monolithic architecture is a traditional software design where all components of an application are built as a single unit.
+ 🔹 Key Points:
+Entire app is deployed as one file/package.
+Components (UI, backend, database access) are tightly coupled.
+
+Easy to develop initially.
+A single web app handling user login, order processing, and payment in one codebase.
+
+
+✅ 2. Microservice Architecture:
+In microservices architecture, an application is broken down into small, independent services, each responsible for a specific feature.
+
+🔹 Key Points:
+Services communicate via APIs (usually HTTP/REST or messaging).
+
+Each service can be deployed and scaled independently.
+
+Promotes modularity and flexibility.
+
+🔹 Example:
+One service for user login.
+
+One for order management.
+
+One for payment handling.
+
+✅ 3. Phases in Microservice Architecture:
+Decomposition – Break monolith into smaller services.
+
+Development – Build and test individual services.
+
+Communication – Define how services will interact (REST, gRPC, messaging).
+
+Deployment – Deploy independently (using containers like Docker).
+
+Monitoring & Scaling – Track performance and scale services as needed.
+
+✅ 4. Decomposition Patterns in Microservices (in detail):
+🔹 A. Decompose by Business Capability
+Break app into services based on business functions.
+
+Example: Auth Service, Inventory Service, Payment Service.
+
+🔹 B. Decompose by Subdomain (Domain-Driven Design)
+Use domain modeling to split the app by core, supporting, and generic domains.
+
+🔹 C. Decompose by Use Case/Workflow
+Split services based on specific workflows or user interactions.
+
+🔹 D. Decompose by Resources (Entity-Based)
+Create services around data entities like User, Order, Product.
+
+✅ 5. Advantages and Disadvantages 
+📌 Monolithic Architecture:
+Advantages	-->
+Easy to develop and deploy initially
+Simple testing and debugging
+Disadvantages
+Difficult to scale parts individually
+Tightly coupled codebase
+Hard to adopt new technologies
+📌 Microservices Architecture:
+advantages-->
+independent scaling and deployment
+Fault isolation – one service down doesn’t crash whole app
+Technology flexibility per service
+Faster development by multiple teams
+Disadvantages->
+Complex development and debugging
+Requires DevOps, containerization, monitoring tools
+Network latency and inter-service communication issues
+Data consistency and transaction handling can be tricky

@@ -1,0 +1,20 @@
+network protocols ->
+so we have 7 layers of osi model as usual but we work with application and transport layer as of now 
+
+application layer ->
+  -->client server protocols 
+    mostly HTTP,FTP,SMTP,WEBSOCKETS come under client server protocols
+  -->peer to peer protocols
+    WEBRTC protocols which come under peer to peer protocols 
+    in this case any can be server and any can be client every one connected to each other in this such that any can work as server and any one can work as protcolos and vice versa 
+    eg : bit torrent
+
+Transport layer & network layer ->
+   TCP/IP ,UDP/IP falls under transport layer  -->
+    so tcp/ip form virtual connection is formed and data sent in packets with serialized number once data is recieved acknowledgement is sent to verify all data is arrived or not ,it is slower as verification and acknowledgement between two pointseg: {Web browsing (HTTP/HTTPS), file transfer (FTP), email (SMTP) uses tcp/ip  under hood}
+
+    so udp/ip data is sent without coonection,no gurantee of data deleviery ,faster as no data acknowledegemt happens ,
+   eg:  Live streaming,videocalling, gaming, VoIP, DNS queries
+   webrtc uses udp/ip underhood
+
+   

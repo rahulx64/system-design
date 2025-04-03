@@ -1,0 +1,108 @@
+these patterns fall under microservices to improve legacy code  ------------------------->
+What is Refactoring?
+Refactoring is the process of improving the structure, readability, and maintainability of existing code without changing its external behavior.
+-----------------------------------
+facts
+Number of Microservices in an E-Commerce Application
+An e-commerce application typically consists of 10-20+ microservices, depending on complexity. Below is a breakdown of key microservices:
+
+
+
+
+----------------------------------------
+saga_pattern***->
+each microservices gets it own databases also means distributed databases 
+********
+no sevices can touch db of another service it would be wrong rather than it would ask another service to get data from data base of thieir service 
+
+hence it can help us use different type of database for different services like for 
+service a--> mongo db
+service b-->my SQL
+service c --> couch db 
+
+we can scale particular db  of a service x such that it can only scale according to need 
+
+
+The Saga Pattern in microservices is used to manage distributed transactions across multiple services while ensuring data consistency. Since traditional ACID transactions don't work well in microservices, the Saga pattern breaks a transaction into multiple steps, where each service performs a local transaction and publishes an event to trigger the next step.
+
+Example:
+Consider an order processing system with three services:
+
+Order Service - Creates an order
+
+Payment Service - Processes payment
+
+Inventory Service - Reserves stock
+-------------------->
+Choreography Approach:
+
+Order Service → Emits OrderCreated event
+
+Payment Service → Listens to OrderCreated, processes payment, emits PaymentCompleted
+
+Inventory Service → Listens to PaymentCompleted, reserves stock
+-------------------------->
+Orchestration Approach:
+
+An Orchestrator sends commands to each service sequentially.
+
+If a failure occurs, compensating actions (like refunding a payment) are triggered.
+
+Benefits:
+✅ Ensures consistency in distributed systems
+✅ Avoids locking resources like traditional transactions
+✅ Supports failure recovery with compensating actions
+
+Challenges:
+❌ Increased complexity
+❌ Requires proper event handling and monitoring
+❌ Debugging can be difficult due to asynchronous execution
+
+Would you like a practical example in code (Java/Spring Boot or Node.js)?
+
+----------------------------------
+strangler_pattern***->
+it is breaking monolothic code to microservices and slowly api calls which used to go to monolothic like 100 %  to reducing it to 0 % and giving it to microservice which we created 
+
+The Strangler Pattern is a software design pattern used to gradually replace a legacy system with a new system without rewriting the entire codebase at once.
+
+
+Inspired by the strangler fig tree, which grows around an old tree and eventually replaces it — similarly, new code gradually replaces old code piece by piece.
+
+ How the Strangler Pattern Works:
+Identify a specific part (module/functionality) of the legacy system.
+
+Develop the new version of that part.
+
+Redirect traffic (API requests or user actions) from the old to the new part.
+
+Repeat until the entire system is replaced.
+
+Remove the old system once fully migrated.
+
+⭐ Migrating a monolithic e-commerce app to microservices:
+
+Start by replacing the "User Management" module with a new service.
+
+Route user-related requests to the new service.
+
+Gradually do the same for "Order", "Payments", etc.
+
+--------------------------
+cqrs_pattern->
+he CQRS (Command Query Responsibility Segregation) pattern is a design pattern that separates read and write operations into different models.
+
+Meaning:
+Command = Operations that change data (Create, Update, Delete).
+
+Query = Operations that read data (Read only).
+
+Instead of using a single model for both reading and writing, CQRS splits them into two separate models.
+
+Why use CQRS in Microservices?
+Read and Write workloads have different performance, scalability, and security needs.
+
+Helps to optimize queries without affecting writes and vice versa.
+
+Reduces complexity in large-scale systems with heavy reads and writes.
+ 

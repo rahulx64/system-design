@@ -1,0 +1,47 @@
+What is a Distributed System ->
+A distributed system is a collection of independent computers that work together as a single system to achieve a common goal. These computers communicate over a network and coordinate tasks by sharing resources.
+
+
+cap theorem ->
+  desirable property of distributed system with replicated data 
+cap theorem full forms -->
+consistency,avalability,partion tolerance
+
+in cap theorem we can use only two property in distributed system  
+why --> let us understand with example 
+consider an application which communcicate with two databases dba which is in india and another is usa  and both databases are replicated means same data in both data bases  these form triangular connection 
+our system contains {APP,DB-A,DB-B}
+
+consistency --> let us understand with example let application  write variable a=8 on db-b  now app read variable  a with db-a then it must also give a=8 once db across system must contain same a variable value  so this is what  consistency means
+
+availability --> when app made communication then every db nodes must respond to it either success or failure that is what availability means   all nodes should respond  
+
+partion-tolerence -->
+  let us consider communication between db-a and db-b is broken when app request something data is coming despite db-a and db-b  node broken or despite partion 
+
+now understand why all three cant work together  --->
+            db-a<------>app <---->db-b
+            |                       |
+            |                       |
+            <----------------------->
+
+now let us consider app req a variable update  x=8 on db-a  and db-b which previously contain x=4 but due to partion between db-a and db-b x become inconsistence in 
+
+    C no 
+    A,P  yes
+
+
+now consider we want CP despite partion then we must down one server db-b which will then affect availabilty  
+ CP-yes
+ A -NO
+
+ now consider  we did similiar variable x change in db-a now when when req x and db-b responded then x might contain different value hence system availble and consistent but it cannot tolerate partion as we get get  enen when we want system to partion tolerence it is not possible because it become either inconsistent or non availble 
+
+ CA yes
+ P-NO
+
+
+ generraly we do not tradeoff partion as it is most important 
+ 
+
+
