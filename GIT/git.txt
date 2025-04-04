@@ -1,0 +1,57 @@
+
+Git Cheat Sheet for SDE
+==========================
+
+📦 Repository Setup
+-------------------
+git init                            - Initialize new Git repo
+git clone <url>                     - Clone a repo
+
+🔄 Sync with Remote
+-------------------
+git remote -v                       - Show connected remotes
+git remote add origin <url>        - Add remote
+git pull origin <branch>           - Get latest changes
+git push origin <branch>           - Push commits
+
+📁 Staging & Committing
+-----------------------
+git status                          - Show file changes
+git add <file> or git add .        - Stage files
+git commit -m "msg"                - Commit staged files
+
+🌿 Branching
+------------
+git branch                          - List branches
+git branch <name>                  - Create new branch
+git checkout <name>                - Switch branches
+git checkout -b <name>             - Create & switch
+git branch -d <name>               - Delete branch
+
+🔀 Merging & Rebasing
+----------------------
+git merge <branch>                 - Merge into current branch
+git rebase <branch>                - Reapply commits on top
+
+🕹 Undo & Reset
+----------------
+git reset HEAD <file>              - Unstage a file
+git reset --hard <commit>         - Reset to commit
+git revert <commit>               - Undo commit with a new one
+
+🧰 Stash & Restore
+-------------------
+git stash                           - Save uncommitted changes
+git stash pop                      - Apply last stash
+
+🔍 Diff & Logs
+---------------
+git diff                            - Show changes
+git diff --staged                  - Show staged changes
+git log                             - Show commit history
+
+🧩 Advanced
+------------
+git cherry-pick <commit>           - Pick one commit
+git tag <name>                     - Tag a commit
+git clean -f                       - Delete untracked files

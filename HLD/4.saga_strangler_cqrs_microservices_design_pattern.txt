@@ -98,11 +98,19 @@ Command = Operations that change data (Create, Update, Delete).
 Query = Operations that read data (Read only).
 
 Instead of using a single model for both reading and writing, CQRS splits them into two separate models.
-
+----------------------------------
 Why use CQRS in Microservices?
 Read and Write workloads have different performance, scalability, and security needs.
 
 Helps to optimize queries without affecting writes and vice versa.
 
 Reduces complexity in large-scale systems with heavy reads and writes.
- 
+ -------------------
+CQRS Basic Flow:
+Command Model → Handles data modification (POST, PUT, DELETE).
+
+Query Model → Handles data retrieval (GET).
+
+The models can even have separate databases (optional).
+
+Usually combined with Event Sourcing to store state changes as a series of events.

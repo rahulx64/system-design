@@ -1,0 +1,56 @@
+🔧 FILE & DIRECTORY COMMANDS
+cd - Change directory
+    Example: cd Desktop/Projects
+
+ls - List files and folders in the current directory
+    Example: ls -l
+
+pwd - Show current directory path
+
+mkdir - Make a new folder
+    Example: mkdir new_folder
+
+rm - Remove files/folders
+    Example: rm file.txt or rm -r folder_name
+
+new-item - Create an empty file
+    Example: new-item x.txt
+
+cp - Copy files/folders
+    Example: cp file.txt backup.txt
+
+mv - Move/rename files
+    Example: mv old.txt new.txt
+
+cat - Display contents of a file
+    Example: cat file.txt
+
+
+🧠 SYSTEM INFO & UTILITIES
+clear - Clear the terminal screen
+
+exit - Exit terminal session
+
+man - Show manual for a command
+    Example: man ls
+
+whoami - Display current user
+
+uname - System info
+    Example: uname -a
+
+
+⚙️ PACKAGE MANAGEMENT (DEBIAN-BASED)
+sudo - Run command as superuser (admin)
+    Example: sudo apt update
+
+apt - Install software packages
+    Example: sudo apt install git
+
+
+📊 MONITORING & HISTORY
+history - Show previously used commands
+
+top - Show running processes and system usage
+
+df - Show disk usage
