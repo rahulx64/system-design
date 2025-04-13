@@ -1,0 +1,14 @@
+{
+  "name": "websockets",
+  "version": "1.0.0",
+  "description": "a socket io implmentation by rahul",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rahul ranjan",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.8.1"
+  }
+}

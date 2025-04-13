@@ -1,0 +1,27 @@
+websocket is communication protocol like ftp,http,smtp,websocket
+normal http communication 
+http form temporary link on the other hand socket io form permanent link 
+client -->server-->client  when client request then only res arrive
+
+websocket used in notification system ,messaging application,
+
+eg socketio is library  used for communication
+
+circuit name io contain sockets like client 1,client 2,client 3,--etc
+every socket conation id 
+events: emit ,on 
+
+server will use io.emit(event1,"xyz")
+client will use  socket.on(event1,()=>{})
+
+http connection is stateless 
+
+
+HTTP  api eg : 
+REST,SOAP,GRAPHQL,RPC,WEBHOOKS
+
+WEBSOCKETS : SOCKETIO
+  a permanent connection is made betweeen client and server 
+  
+
+
